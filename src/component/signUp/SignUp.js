@@ -1,115 +1,63 @@
 import {
-  Flex,
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  HStack,
-  InputRightElement,
-  Stack,
   Button,
+  Checkbox,
+  Flex,
+  FormControl,
   Heading,
-  Text,
-  useColorModeValue,
+  Input,
   Link,
-} from "@chakra-ui/react";
-import { useState } from "react";
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+  Stack,
+  Image,
+} from '@chakra-ui/react';
 
-export default function Signup() {
-  const [showPassword, setShowPassword] = useState(false);
-
+export default function SignUp() {
   return (
-    <Flex minH={"60vh"} align={"center"} justify={"center"}>
-      <Stack spacing={8} mx={"auto"} maxW={"md"} py={12} px={6}>
-        <Stack align={"center"}>
-          <Heading fontSize={"xl"} textAlign={"center"}>
-            Sign up
-          </Heading>
-        </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
-          <Stack>
-            <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>Full Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl id="lastName">
-                  <FormLabel>UserName</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-            </HStack>
-            <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" />
-            </FormControl>
-            <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
-              <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
-                <InputRightElement h={"full"}>
-                  <Button
-                    variant={"ghost"}
-                    onClick={() =>
-                      setShowPassword((showPassword) => !showPassword)
-                    }
-                  >
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
-            <FormControl id="password" isRequired>
-              <FormLabel>Confirm Password</FormLabel>
-              <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
-                <InputRightElement h={"full"}>
-                  <Button
-                    variant={"ghost"}
-                    onClick={() =>
-                      setShowPassword((showPassword) => !showPassword)
-                    }
-                  >
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
-            <FormControl id="Cnumber" isRequired>
-              <FormLabel>Contact Number</FormLabel>
-              <Input type="text" />
-            </FormControl>
-            <Stack spacing={10} pt={2}>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={"blue.400"}
-                color={"white"}
-                _hover={{
-                  bg: "blue.500",
-                }}
-              >
-                Sign up
-              </Button>
+    <Stack minH={'70vh'} direction={{ base: 'column', md: 'row' }} boxShadow="lg" borderRadius={"lg"} mt="2%">
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack spacing={4} w={'full'} maxW={'md'}>
+          <Heading fontSize={'2xl'}>Sign Up to your account</Heading>
+          <FormControl id="fName">
+            <Input type="text" placeholder="Full Name"/>
+          </FormControl>
+          <FormControl id="uName">
+            <Input type="text" placeholder="UserName" />
+          </FormControl>
+          <FormControl id="email">
+            <Input type="email" placeholder="Email Address" />
+          </FormControl>
+          <FormControl id="password">
+            <Input type="password" placeholder="Password"/>
+          </FormControl>
+          <FormControl id="cPassword">
+            <Input type="password" placeholder="Confirm Password"/>
+          </FormControl>
+          <Stack spacing={6}>
+            <Stack
+              direction={{ base: 'column', sm: 'row' }}
+              align={'start'}
+              justify={'space-between'}>
+              <Checkbox>Remember me</Checkbox>
+              <Link color={'blue.500'}>Forgot password?</Link>
             </Stack>
-            <Stack pt={6}>
-              <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
-              </Text>
-            </Stack>
+            <Button colorScheme={'blue'} variant={'solid'}>
+              Sign in
+            </Button>
           </Stack>
-        </Box>
-      </Stack>
-    </Flex>
+        </Stack>
+      </Flex>
+      <Flex flex={1}>
+        <Image
+          alt={'Login Image'}
+          objectFit={'cover'}
+          height="70%"
+          width="100%"
+          mt="10%"
+          mr="5%"
+          src={
+            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
+          }
+        />
+      </Flex>
+    </Stack>
   );
 }

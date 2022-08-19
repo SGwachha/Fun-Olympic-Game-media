@@ -1,8 +1,8 @@
 import Footer from "./component/footer/Footer";
 import Navbar from "./component/navbar/Navbar";
-import "./App.css"
 import Signup from "./component/signUp/SignUp";
-import Login from "./component/login/Login";
+import Router from "./Router";
+import "./App.css"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       </div>
       <div className="content-container">
         {/* <Signup /> */}
-        <Login />
+        <Router />
       </div>
       <div className="footer-container">
         <Footer />
