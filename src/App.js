@@ -1,6 +1,5 @@
 import Footer from "./component/footer/Footer";
 import Navbar from "./component/navbar/Navbar";
-import Signup from "./component/signUp/SignUp";
 import Router from "./Router";
 import "./App.css"
 
@@ -11,7 +10,6 @@ function App() {
         <Navbar />
       </div>
       <div className="content-container">
-        {/* <Signup /> */}
         <Router />
       </div>
       <div className="footer-container">

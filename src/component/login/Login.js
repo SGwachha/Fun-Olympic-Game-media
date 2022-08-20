@@ -3,7 +3,6 @@ import {
   Checkbox,
   Flex,
   FormControl,
-  FormLabel,
   Heading,
   Input,
   Link,
@@ -35,7 +34,7 @@ export default function SignUp() {
               <Link color={'blue.500'}>Forgot password?</Link>
             </Stack>
             <Button colorScheme={'blue'} variant={'solid'}>
-              Sign in
+              <Link href='/dashboard' textDecoration={"none"}>Next</Link>
             </Button>
           </Stack>
         </Stack>
