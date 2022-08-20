@@ -1,57 +1,106 @@
 import {
-  Button,
-  Checkbox,
   Flex,
+  Box,
   FormControl,
-  Heading,
+  FormLabel,
   Input,
-  Link,
+  Checkbox,
   Stack,
-  Image,
-} from '@chakra-ui/react';
+  Link,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { validateEmail } from "../../utils/Validation";
 
-export default function SignUp() {
+export default function Login() {
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
+  const onSubmit = (data) => {
+    if (!validateEmail(data.email)) {
+      toast.dismiss();
+      toast.error("Please enter a valid email address", {
+        position: "top-right",
+      });
+      return;
+    }
+    toast.success("Login Successful");
+  };
   return (
-    <Stack minH={'70vh'} direction={{ base: 'column', md: 'row' }} boxShadow="lg" borderRadius={"lg"} mt="2%">
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
-          <FormControl id="email">
-            <Input type="email" placeholder="UserName/Email" />
-          </FormControl>
-          <FormControl id="password">
-            <Input type="password" placeholder="Password" />
-          </FormControl>
-          <FormControl id="cPassword">
-            <Input type="password" placeholder="Confirm Password" />
-          </FormControl>
-          <Stack spacing={6}>
-            <Stack
-              direction={{ base: 'column', sm: 'row' }}
-              align={'start'}
-              justify={'space-between'}>
-              <Checkbox>Remember me</Checkbox>
-              <Link color={'blue.500'}>Forgot password?</Link>
-            </Stack>
-            <Button colorScheme={'blue'} variant={'solid'}>
-              <Link href='/dashboard' textDecoration={"none"}>Next</Link>
-            </Button>
-          </Stack>
+    <Flex
+      align={"center"}
+      justify={"center"}
+      bg={useColorModeValue("gray.50", "gray.800")}
+      width={"100%"}
+    >
+      <Stack spacing={3} mx={"auto"} maxW={"lg"} py={4} px={6}>
+        <Stack align={"center"}>
+          <Heading fontSize={"2xl"}>Log in to your account</Heading>
         </Stack>
-      </Flex>
-      <Flex flex={1}>
-        <Image
-          alt={'Login Image'}
-          objectFit={'cover'}
-          height="70%"
-          width="100%"
-          mt="10%"
-          mr="5%"
-          src={
-            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
-          }
-        />
-      </Flex>
-    </Stack>
+        <Box
+          rounded={"lg"}
+          bg={useColorModeValue("white", "gray.700")}
+          boxShadow={"lg"}
+          p={8}
+        >
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Stack spacing={2}>
+              <FormControl id="email" isRequired>
+                <FormLabel>Email address</FormLabel>
+                <Input type="email" {...register("email")} />
+              </FormControl>
+              <FormControl id="password" isRequired>
+                <FormLabel>Password</FormLabel>
+                <Input type="password" {...register("password")} />
+              </FormControl>
+              <FormControl id="cpassword" isRequired>
+                <FormLabel>Confirm Password</FormLabel>
+                <Input type="password" {...register("cpassword")} />
+              </FormControl>
+              <FormControl id="petname" isRequired>
+                <FormLabel>Enter Your Pet Name</FormLabel>
+                <Input type="text" {...register("petname")} />
+              </FormControl>
+              <Stack spacing={10}>
+                <Stack
+                  direction={{ base: "column", sm: "row" }}
+                  align={"start"}
+                  justify={"space-between"}
+                >
+                  <Checkbox>Remember me</Checkbox>
+                  <Link color={"blue.400"} onClick={() => navigate("/forget")}>
+                    Forgot password?
+                  </Link>
+                </Stack>
+                <Button
+                  bg={"blue.400"}
+                  color={"white"}
+                  _hover={{
+                    bg: "blue.500",
+                  }}
+                  type="submit"
+                  isLoading={isSubmitting}
+                >
+                  Sign in
+                </Button>
+              </Stack>
+              <Stack pt={6}>
+                <Text align={"center"} onClick={() => navigate("/signup")}>
+                  Not a User? <Link color={"blue.400"}>Register</Link>
+                </Text>
+              </Stack>
+            </Stack>
+          </form>
+        </Box>
+      </Stack>
+    </Flex>
   );
 }

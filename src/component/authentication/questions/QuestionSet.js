@@ -1,61 +1,37 @@
-import { Button, Stack,FormLabel,Box,Input, Select, Textarea } from "@chakra-ui/react"
+import { Button, Stack,FormLabel,Box,Input } from "@chakra-ui/react"
 import { useForm } from "react-hook-form";
 
 const QuestionSet=({datas}) =>{
 console.log(datas, "hello dataa how are you")
     const {register, handleSubmit, formState:{isSubmitting, errors}} = useForm();
     const onSubmit = (data) => {
-        console.log(data, datas, "hwllo data how are you")
     }
   
     return (
       <>
         <form onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing='24px'>
-                <Box>
-                  <FormLabel htmlFor='username'>Your Organization ?</FormLabel>
-                  <Input
-                   {...register("organization")} 
-                    placeholder='Please enter your organization name'
-                  />
-                </Box>
-                <Box>
-                  <FormLabel htmlFor='username'>Your designation ?</FormLabel>
-                  <Input
-                    {...register("designation")}
-                    placeholder='Please enter your designation.'
-                  />
-                </Box>
-               
-  
-                <Box>
-                  <FormLabel htmlFor='owner'>Experience</FormLabel>
-                  <Select id='owner' defaultValue='Less than a year' {...register("experience")} >
-                  <option value='Less than a year'>Less than a year</option>
-                    <option value='1'>1 year</option>
-                    <option value='2'>2 years</option>
-                    <option value='3'>3 years</option>
-                    <option value='4'>4 years</option>
-                    <option value='5+'>5+ years</option>
-
-                  </Select>
-                </Box>
-                <Box>
-                  <FormLabel htmlFor='owner' >Data set category</FormLabel>
-                  <Select id='owner' defaultValue='sales'>
-                    <option value='sales'>Sales</option>
-                    <option value='marketing'>Marketing</option>
-                    <option value='forcasting'>Forcasting</option>
-                    
-
-                  </Select>
-                </Box>
-  
-                <Box>
-                  <FormLabel htmlFor='desc'> Description</FormLabel>
-                  <Textarea id='desc' placeholder="Write short information about you..." {...register("description")} />
-                </Box>
-
+              <Box>
+            <FormLabel htmlFor="petname" isRequired>Your Pet Name ?</FormLabel>
+            <Input
+              {...register("petname")}
+              placeholder="Please enter your Pet name"
+            />
+          </Box>
+          <Box>
+            <FormLabel htmlFor="contactnumber" isRequired>Your Contact Number ?</FormLabel>
+            <Input
+              {...register("contactnumber")}
+              placeholder="Please enter your Contact Number"
+            />
+          </Box>
+          <Box>
+            <FormLabel htmlFor="country" isRequired>Your Country ?</FormLabel>
+            <Input
+              {...register("country")}
+              placeholder="Please enter your Country name"
+            />
+          </Box>
                 <Button
                 bg={isSubmitting ? "gray.300" : "black"}
                 color={isSubmitting ? "gray.800" : "white"}
@@ -63,7 +39,6 @@ console.log(datas, "hello dataa how are you")
                 type="submit"
                 _hover={isSubmitting ? "gray.300" : "black"}
                size="lg"
-                
                 >
                     Confirm
                 </Button>
