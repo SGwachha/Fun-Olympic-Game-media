@@ -12,9 +12,11 @@ import {
   Stack,
   useColorMode,
   Center,
-  Text
+  Text,
+  Image
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import FunOlympic from "../../images/funolympic.png"
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -22,8 +24,9 @@ export default function Navbar() {
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box>
+          <Box display="flex" justifyContent="center" gap={3}>
             <Text>Fun Olympics Games</Text>
+            <Image h="40px" borderRadius="10%" opacity="0.7" src={FunOlympic} alt="funolympic" />
           </Box>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
