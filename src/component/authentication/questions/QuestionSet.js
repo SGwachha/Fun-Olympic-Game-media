@@ -1,12 +1,11 @@
 import { Button, Stack,FormLabel,Box,Input } from "@chakra-ui/react"
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const QuestionSet=({datas}) =>{
-console.log(datas, "hello dataa how are you")
     const {register, handleSubmit, formState:{isSubmitting, errors}} = useForm();
     const onSubmit = (data) => {
     }
-  
     return (
       <>
         <form onSubmit={handleSubmit(onSubmit)}>

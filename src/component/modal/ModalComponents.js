@@ -20,10 +20,9 @@ const ModalComponent = ({title,children, modalOpen , modalClose }) => {
       </DrawerBody>
 
       <DrawerFooter>
-        <Button variant='outline' mr={3} onClick={modalClose}>
+        <Button variant='outline' mr={3} bg="black" color="white" onClick={modalClose}>
           Back
         </Button>
-        <Button colorScheme='blue'>Confirm</Button>
       </DrawerFooter>
     </DrawerContent>
   </Drawer>
