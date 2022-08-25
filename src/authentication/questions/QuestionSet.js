@@ -1,11 +1,14 @@
 import { Button, Stack,FormLabel,Box,Input } from "@chakra-ui/react"
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import {Navigate, useNavigate} from "react-router-dom"
 
 const QuestionSet=({datas}) =>{
     const {register, handleSubmit, formState:{isSubmitting, errors}} = useForm();
     const onSubmit = (data) => {
     }
+    //to navigate to dashboard
+    const navigate = useNavigate();
     return (
       <>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,6 +41,7 @@ const QuestionSet=({datas}) =>{
                 type="submit"
                 _hover={isSubmitting ? "gray.300" : "black"}
                size="lg"
+               onClick={() => navigate('/login')}
                 >
                     Confirm
                 </Button>

@@ -88,6 +88,7 @@ export default function Login() {
                   }}
                   type="submit"
                   isLoading={isSubmitting}
+                  onClick={() => navigate("/dashboard")}
                 >
                   Sign in
                 </Button>

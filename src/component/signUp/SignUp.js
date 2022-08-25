@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import ModalComponent from "../modal/ModalComponents";
-import QuestionSet from "../authentication/questions/QuestionSet";
+import QuestionSet from "../../authentication/questions/QuestionSet";
 import { validateEmail } from "../../utils/Validation";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
