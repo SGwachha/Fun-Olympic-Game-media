@@ -41,7 +41,7 @@ export default function Login() {
       bg={useColorModeValue("gray.50", "gray.800")}
       width={"100%"}
     >
-      <Stack spacing={3} mx={"auto"} maxW={"lg"} py={4} px={6}>
+      <Stack spacing={3} mx={"auto"} maxW={"lg"} py={4}>
         <Stack align={"center"}>
           <Heading fontSize={"2xl"}>Log in to your account</Heading>
         </Stack>
@@ -49,25 +49,28 @@ export default function Login() {
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
+          w="30vw"
           p={8}
         >
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Stack spacing={2}>
+            <Stack spacing={5}>
               <FormControl id="email" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" {...register("email")} />
+                <Input type="email" {...register("email")} placeholder="Enter Your Email"/>
               </FormControl>
               <FormControl id="password" isRequired>
-                <FormLabel>Password</FormLabel>
-                <Input type="password" {...register("password")} />
+                <Input type="password" {...register("password")} placeholder="Enter Your Password"/>
               </FormControl>
               <FormControl id="cpassword" isRequired>
-                <FormLabel>Confirm Password</FormLabel>
-                <Input type="password" {...register("cpassword")} />
+                <Input type="password" {...register("cpassword")} placeholder="Confirm Password"/>
               </FormControl>
               <FormControl id="petname" isRequired>
-                <FormLabel>Enter Your Pet Name</FormLabel>
-                <Input type="text" {...register("petname")} />
+                <Input type="text" {...register("petname")} placeholder="Enter Your Pet Name"/>
+              </FormControl>
+              <FormControl id="cnumber" isRequired>
+                <Input type="tel" {...register("cnumber")} placeholder="Enter Your Contact Number"/>
+              </FormControl>
+              <FormControl id="country" isRequired>
+                <Input type="text" {...register("contry")} placeholder="Enter Your Country"/>
               </FormControl>
               <Stack spacing={10}>
                 <Stack

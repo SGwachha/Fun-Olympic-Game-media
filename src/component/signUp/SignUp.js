@@ -50,8 +50,6 @@ const Signup = () => {
     onOpen();
   };
 
-  console.log(storeData);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack direction={{ base: "column", md: "row" }}>
@@ -75,7 +73,7 @@ const Signup = () => {
               <Input type="password" {...register("password")} />
             </FormControl>
             <FormControl id="cpassword" isRequired>
-              <FormLabel>Confirm Password</FormLabel>
+              <FormLabel>Contact Number</FormLabel>
               <Input type="password" {...register("cpassword")} />
             </FormControl>
             <Stack spacing={6}>
