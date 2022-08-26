@@ -1,7 +1,6 @@
 import { Button, Stack,FormLabel,Box,Input } from "@chakra-ui/react"
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import {Navigate, useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 const QuestionSet=({datas}) =>{
     const {register, handleSubmit, formState:{isSubmitting, errors}} = useForm();
