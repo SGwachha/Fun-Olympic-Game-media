@@ -8,7 +8,6 @@ import React from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 
 const SearchBar = () => {
-  // remove this commit
   return (
     <InputGroup w="30%">
       <Input pr="4.5rem" type="text" placeholder="Search" />
