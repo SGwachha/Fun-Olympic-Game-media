@@ -9,7 +9,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 
 const SearchBar = () => {
   return (
-    <InputGroup w="30%">
+    <InputGroup w="30%" mt="3%" mb="2%">
       <Input pr="4.5rem" type="text" placeholder="Search" />
       <InputRightElement width="4.5rem">
         <IconButton

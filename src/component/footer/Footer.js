@@ -17,7 +17,7 @@ export default function Footer() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text textAlign="center">© 2022 Media. All rights reserved</Text>
+        <Text textAlign="center">© 2022 Fun Olympics Games. All rights reserved</Text>
       </Container>
     </Box>
   );

@@ -18,12 +18,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { RiShareForwardLine} from "react-icons/ri";
 import {MdOutlineReportProblem } from "react-icons/md"
 
-export default function Cards() {
+export default function Cards({image, title, desc}) {
   return (
-    <Center py={6}>
+    <Center w="100%" py={6}>
       <Box
         maxW={"445px"}
         w={"full"}
+        h="100%"
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"2xl"}
         rounded={"md"}
@@ -37,6 +38,7 @@ export default function Cards() {
           mx={-6}
           mb={6}
           pos={"relative"}
+          cursor="pointer"
         ></Box>
         <Flex ml="3%">
           <Stack>
@@ -44,20 +46,24 @@ export default function Cards() {
               color={useColorModeValue("gray.700", "white")}
               fontSize={"2xl"}
               fontFamily={"body"}
+              cursor={"pointer"}
             >
-              Boost your conversion rate
+              {title}
             </Heading>
             <Text color={"gray.500"}>
-              Lorem ipsum dolor sit amet, consetetur sadipscin
+              {desc}
             </Text>
           </Stack>
-          <Flex justifyContent="center" mt={4}>
+          <Flex justifyContent="center" mt={4} ml="10">
             <Popover placement="bottom" isLazy>
               <PopoverTrigger>
                 <IconButton
                   aria-label="More server options"
                   icon={<BsThreeDotsVertical />}
                   variant="solid"
+                  bg="none"
+                  _hover={"none"}
+                  _active={"none"}
                   w="fit-content"
                 />
               </PopoverTrigger>
@@ -71,8 +77,10 @@ export default function Cards() {
                       rightIcon={<MdOutlineReportProblem />}
                       justifyContent="space-between"
                       fontWeight="normal"
-                      colorScheme="red"
                       fontSize="sm"
+                      bg={"none"}
+                      _hover={"none"}
+                      _active={"none"}
                     >
                       Report
                     </Button>
@@ -82,8 +90,10 @@ export default function Cards() {
                       rightIcon={<RiShareForwardLine />}
                       justifyContent="space-between"
                       fontWeight="normal"
-                      colorScheme="red"
                       fontSize="sm"
+                      bg={"none"}
+                      _hover={"none"}
+                      _active={"none"}
                     >
                       Share
                     </Button>
