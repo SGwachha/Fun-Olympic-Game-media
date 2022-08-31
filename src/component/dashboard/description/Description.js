@@ -1,9 +1,16 @@
-import React from 'react'
+import { Button, Flex } from "@chakra-ui/react";
+import React from "react";
+import SearchBar from "../../navbar/SearchBar";
 
 const Description = () => {
   return (
-    <div>Description</div>
-  )
-}
+    <Flex>
+      <Button bg="red">Go Back</Button>
+      <Box>
+        <SearchBar />
+      </Box>
+    </Flex>
+  );
+};
 
-export default Description
+export default Description;
