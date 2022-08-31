@@ -27,7 +27,6 @@ export default function Navbar() {
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box display="flex" justifyContent="center" gap={3}>
-            <Text cursor={"pointer"} onClick={() => navigate("/")}>Fun Olympics Games</Text>
             <Image cursor={"pointer"} onClick={() => navigate("/")} h="40px" borderRadius="10%" opacity="0.7" src={FunOlympic} alt="funolympic" />
           </Box>
           <Flex alignItems={"center"}>

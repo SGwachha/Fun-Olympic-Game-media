@@ -8,7 +8,7 @@ import Login from "./component/login/Login"
 import Home from './Home.js'
 import Signup from './component/signUp/SignUp'
 import Cards from './component/cards/Cards.js'
-import SearchBar from './component/navbar/SearchBar.js'
+import Description from './component/dashboard/description/Description.js'
 
 const Router = () => {
   return (
@@ -22,7 +22,7 @@ const Router = () => {
         <Route path='/question' element={<QuestionSet />} />
         <Route path='/reset' element={<ResetPassword />} />
         <Route path='/cards' element={<Cards />} />
-        <Route path='/description' element={<SearchBar />} />
+        <Route path='/description' element={<Description />} />
     </Routes>
     </>
   )

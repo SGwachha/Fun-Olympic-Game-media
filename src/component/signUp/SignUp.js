@@ -52,7 +52,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack direction={{ base: "column", md: "row" }}>
+      <Stack direction={{ base: "column", md: "row" }} w="100%" p={20} >
         <Flex p={3} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={2} w={"full"} maxW={"md"}>
             <Heading fontSize={"2xl"}>Register your account</Heading>
