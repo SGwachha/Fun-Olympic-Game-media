@@ -40,7 +40,7 @@ export default function Cards({image, title, desc}) {
           pos={"relative"}
           cursor="pointer"
         ></Box>
-        <Flex ml="3%">
+        <Flex bg="red">
           <Stack>
             <Heading
               color={useColorModeValue("gray.700", "white")}
@@ -54,8 +54,8 @@ export default function Cards({image, title, desc}) {
               {desc}
             </Text>
           </Stack>
-          <Flex justifyContent="center" mt={4} ml="10">
-            <Popover placement="bottom" isLazy>
+          <Flex justify={"flex-end"} mt={4}>
+            <Popover placement="bottom">
               <PopoverTrigger>
                 <IconButton
                   aria-label="More server options"
