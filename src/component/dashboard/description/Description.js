@@ -1,5 +1,18 @@
-import { Flex, Button, Box, Stack, Text, Heading } from "@chakra-ui/react";
+import {
+  Flex,
+  Button,
+  Box,
+  Stack,
+  Text,
+  Heading,
+  IconButton,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
+import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
+import { BiComment } from "react-icons/bi";
+import { MdOutlineReportProblem } from "react-icons/md";
+import { RiShareForwardLine } from "react-icons/ri";
 import SearchBar from "../../navbar/SearchBar";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +21,9 @@ const Description = () => {
   return (
     <>
       <Flex w="100%" align={"center"} justify="space-evenly" ml="-26%">
-        <Button mt="1%" onClick={()=> navigate("/dashboard")} >Go Back</Button>
+        <Button mt="1%" onClick={() => navigate("/dashboard")}>
+          Go Back
+        </Button>
         <SearchBar />
       </Flex>
       <Stack
@@ -20,45 +35,79 @@ const Description = () => {
         display={"flex"}
         flexDirection="row"
       >
-        <Box
-          w="80%"
-          pos={"relative"}>
-        <Box
-          h={"650px"}
-          w="100%"
-          bg={"gray.100"}
-          pos={"relative"}
-          cursor="pointer"
-        >
-          video
-        </Box>
-        <Flex mt="3%" justify={"space-between"} w="100%" bg="black">
-          <Box bg="red" w="50%">
-          <Heading fontSize={"24px"}>
-            Football
-          </Heading>
-          <Text>
-            Messi vs Ronaldo
-          </Text>
+        <Box w="80%" pos={"relative"}>
+          <Box
+            h={"650px"}
+            w="100%"
+            bg={"gray.100"}
+            pos={"relative"}
+            cursor="pointer"
+          >
+            video
           </Box>
-          <Box display={"flex"} gap="10%" w="50%">
-          <Text fontSize={"18px"} cursor="pointer">
-            Like
-            </Text>
-            <Text fontSize={"18px"} cursor="pointer">
-            Dislike
-            </Text>
-            <Text fontSize={"18px"} cursor="pointer">
-            Comment
-            </Text>
-            <Text fontSize={"18px"} cursor="pointer">
-            Share
-            </Text>
-            <Text fontSize={"18px"} cursor="pointer">
-            Report
-            </Text>
-          </Box>
-        </Flex>
+          <Flex mt="3%" justify={"space-between"} w="100%">
+            <Box w="50%">
+              <Heading fontSize={"24px"}>Football</Heading>
+              <Text>Messi vs Ronaldo</Text>
+            </Box>
+            <Flex display={"flex"} w="60%" justify="flex-end">
+              <Button
+                w="80px"
+                leftIcon={<AiOutlineLike />}
+                justifyContent="space-between"
+                fontSize="16px"
+                bg={"none"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                Like
+              </Button>
+              <Button
+                w="100px"
+                leftIcon={<AiOutlineDislike />}
+                justifyContent="space-between"
+                fontSize="16px"
+                bg={"none"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                Dislike
+              </Button>
+              <Button
+                w="120px"
+                leftIcon={<BiComment />}
+                justifyContent="space-between"
+                fontSize="16px"
+                bg={"none"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                Comments
+              </Button>
+              <Button
+                w="100px"
+                leftIcon={<RiShareForwardLine />}
+                justifyContent="space-between"
+                fontSize="16px"
+                bg={"none"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                Share
+              </Button>
+              <Button
+                w="100px"
+                leftIcon={<MdOutlineReportProblem />}
+                justifyContent="space-between"
+                fontSize="16px"
+                bg={"none"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                Report
+              </Button>
+            </Flex>
+          </Flex>
         </Box>
         <Box cursor={"pointer"} h={"750px"} w="30%" bg={"gray.100"}>
           Suggested

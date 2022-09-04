@@ -19,6 +19,7 @@ import { validateEmail } from "../../utils/Validation";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Football from "../../images/football.jpg";
 
 const Signup = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -52,7 +53,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack direction={{ base: "column", md: "row" }} w="100%" >
+      <Stack direction={{ base: "column", md: "row" }} w="100%">
         <Flex p={3} flex={1} align={"center"} justify={"center"}>
           <Stack spacing={2} w={"full"} maxW={"md"}>
             <Heading fontSize={"2xl"}>Register your account</Heading>
@@ -103,14 +104,14 @@ const Signup = () => {
             </Stack>
           </Stack>
         </Flex>
-        <Flex flex={1}>
+        <Flex flex={1} justify="flex-start">
           <Image
             alt={"Login Image"}
             objectFit={"cover"}
             mt="2%"
-            src={
-              "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
-            }
+            h="100%"
+            w={"80%"}
+            src={Football}
           />
         </Flex>
 
