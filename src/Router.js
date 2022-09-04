@@ -5,7 +5,7 @@ import QuestionSet from './authentication/questions/QuestionSet.js'
 import ResetPassword from './authentication/resetpassword/ResetPassword.js'
 import Dashboard from './component/dashboard/Dashboard'
 import Login from "./component/login/Login"
-import Home from './Home.js'
+import Home from './home/Home.js'
 import Signup from './component/signUp/SignUp'
 import Cards from './component/cards/Cards.js'
 import Description from './component/dashboard/description/Description.js'

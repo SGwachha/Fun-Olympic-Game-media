@@ -9,8 +9,12 @@ import {
   Button,
   Heading,
   Text,
+  useDisclosure,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import ModalComponent from "../modal/ModalComponents";
+import QuestionSet from "../../authentication/questions/QuestionSet";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -18,21 +22,33 @@ import { validateEmail } from "../../utils/Validation";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [storeData, setStoreData] = useState();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLoading, setIsLoading] = useState(true);
+
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
   } = useForm();
   const onSubmit = (data) => {
-    if (!validateEmail(data.email)) {
-      toast.dismiss();
-      toast.error("Please enter a valid email address", {
-        position: "top-right",
-      });
-      return;
-    }
+    //validate email
+  if (!validateEmail(data.email)) {
+    toast.dismiss();
+    toast.error("Please enter a valid email address", {
+      position: "top-right",
+    });
+    return;
+  }
+  if (data.password !== data.cpassword) {
     toast.success("Login Successful");
-  };
+  }
+  setStoreData(data);
+  setIsLoading(false);
+  onOpen();
+};
+ 
+
   return (
     <Flex
       align={"center"}
@@ -62,15 +78,6 @@ export default function Login() {
               <FormControl id="cpassword" isRequired>
                 <Input type="password" {...register("cpassword")} placeholder="Confirm Password"/>
               </FormControl>
-              <FormControl id="petname" isRequired>
-                <Input type="text" {...register("petname")} placeholder="Enter Your Pet Name"/>
-              </FormControl>
-              <FormControl id="cnumber" isRequired>
-                <Input type="tel" {...register("cnumber")} placeholder="Enter Your Contact Number"/>
-              </FormControl>
-              <FormControl id="country" isRequired>
-                <Input type="text" {...register("contry")} placeholder="Enter Your Country"/>
-              </FormControl>
               <Stack spacing={10}>
                 <Stack
                   direction={{ base: "column", sm: "row" }}
@@ -90,9 +97,8 @@ export default function Login() {
                   }}
                   type="submit"
                   isLoading={isSubmitting}
-                  onClick={() => navigate("/dashboard")}
                 >
-                  Sign in
+                  Next
                 </Button>
               </Stack>
               <Stack pt={6}>
@@ -100,6 +106,14 @@ export default function Login() {
                   Not a User? <Link color={"blue.400"}>Register</Link>
                 </Text>
               </Stack>
+              {/* for modal component */}
+        <ModalComponent
+          modalOpen={isOpen}
+          modalClose={onClose}
+          title="Answer the question for further process !!!"
+        >
+          <QuestionSet datas={storeData} />
+        </ModalComponent>
             </Stack>
           </form>
         </Box>

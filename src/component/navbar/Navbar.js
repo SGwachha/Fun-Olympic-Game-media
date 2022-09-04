@@ -12,8 +12,7 @@ import {
   Stack,
   useColorMode,
   Center,
-  Text,
-  Image
+  Image,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import FunOlympic from "../../images/funolympic.png"
@@ -30,11 +29,13 @@ export default function Navbar() {
             <Image cursor={"pointer"} onClick={() => navigate("/")} h="40px" borderRadius="10%" opacity="0.7" src={FunOlympic} alt="funolympic" />
           </Box>
           <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={7}>
+            <Stack direction={"row"} spacing={5} align="center" justify={"center"} >
+              <Button onClick={() => navigate("/signup")} bg="none" _hover="none" _active="none" >Sign up</Button>
+              <span>/</span>
+              <Button onClick={() => navigate("/login")} bg="none" _hover="none" _active="none">Sign in</Button>
               <Button onClick={toggleColorMode} _hover="none" _active={"none"}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-
               <Menu>
                 <MenuButton
                   as={Button}
@@ -63,6 +64,7 @@ export default function Navbar() {
                   <br />
                   <MenuDivider />
                   <MenuItem>Admin Settings</MenuItem>
+                  <MenuItem>User Settings</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
               </Menu>

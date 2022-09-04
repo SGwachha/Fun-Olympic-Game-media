@@ -1,12 +1,14 @@
-import { Flex, Button, Box, HStack, Stack } from "@chakra-ui/react";
-import React from "react";
+import { Flex, Button, Box, Stack } from "@chakra-ui/react";
+import React, { useState } from "react";
 import SearchBar from "../../navbar/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 const Description = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Flex w="100%" align={"center"} justify="space-evenly" ml="-26%">
-        <Button mt="1%">Go Back</Button>
+        <Button mt="1%" onClick={()=> navigate("/dashboard")} >Go Back</Button>
         <SearchBar />
       </Flex>
       <Stack
