@@ -9,6 +9,7 @@ import Home from './home/Home.js'
 import Signup from './component/signUp/SignUp'
 import Cards from './component/cards/Cards.js'
 import Description from './component/dashboard/description/Description.js'
+import News from './component/news/News.js'
 
 const Router = () => {
   return (
@@ -23,6 +24,7 @@ const Router = () => {
         <Route path='/reset' element={<ResetPassword />} />
         <Route path='/cards' element={<Cards />} />
         <Route path='/description' element={<Description />} />
+        <Route path='/news' element={<News />} />	
     </Routes>
     </>
   )

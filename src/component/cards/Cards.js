@@ -16,13 +16,14 @@ import {
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { RiShareForwardLine} from "react-icons/ri";
-import {MdOutlineReportProblem } from "react-icons/md"
-import { useNavigate } from "react-router-dom";
+import {MdOutlineReportProblem } from "react-icons/md";
 
 export default function Cards({image, title, desc}){
-  const navigate = useNavigate();
+
+  
+
   return (
-    <Center w="100%" py={6} cursor="pointer" onClick={() => navigate("/login")}>
+    <Center w="100%" py={6} cursor="pointer">
       <Box
         maxW={"445px"}
         w={"full"}
