@@ -19,9 +19,6 @@ import { RiShareForwardLine} from "react-icons/ri";
 import {MdOutlineReportProblem } from "react-icons/md";
 
 export default function Cards({image, title, desc}){
-
-  
-
   return (
     <Center w="100%" py={6} cursor="pointer">
       <Box

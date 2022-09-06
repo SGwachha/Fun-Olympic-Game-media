@@ -63,9 +63,9 @@ export default function Navbar() {
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Admin Settings</MenuItem>
-                  <MenuItem>User Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem onClick={() => navigate("/admin")}>Admin Settings</MenuItem>
+                  <MenuItem onClick={() => navigate("/user")}>User Settings</MenuItem>
+                  <MenuItem onClick={() => navigate("/")}>Logout</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
