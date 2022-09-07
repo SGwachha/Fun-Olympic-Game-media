@@ -93,6 +93,7 @@ export default function Cards({image, title, desc}){
                       bg={"none"}
                       _hover={"none"}
                       _active={"none"}
+                      onClick={() => alert("Share")}
                     >
                       Share
                     </Button>

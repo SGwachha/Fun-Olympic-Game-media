@@ -12,6 +12,7 @@ import Description from './component/dashboard/description/Description.js'
 import News from './component/news/News.js'
 import AdminPage from './authentication/admin/AdminPage.js'
 import User from './authentication/user/User.js'
+import Share from './component/cards/modalcard/Share.js'
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path='/news' element={<News />} />	
         <Route path='/admin' element={<AdminPage />} />
         <Route path='/user' element={<User />} />
+        <Route path='/share' element={<Share />} />
         <Route path='*' element={<h1 style={{fontSize : '40px'}}>404 Not Found</h1>} />
     </Routes>
     </>
