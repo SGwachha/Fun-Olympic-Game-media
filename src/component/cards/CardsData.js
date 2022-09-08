@@ -5,7 +5,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 
 const CardsData = () => {
   return (
-    <SimpleGrid columns={4} gap="5%" w="90%">
+    <SimpleGrid columns={3} gap="5%" w="100%">
       {Data.map((data) => {
         return (
           <>

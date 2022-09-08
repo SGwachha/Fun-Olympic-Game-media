@@ -17,8 +17,10 @@ import {
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { RiShareForwardLine} from "react-icons/ri";
 import {MdOutlineReportProblem } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards({image, title, desc}){
+  const navigate = useNavigate();
   return (
     <Center w="100%" py={6} cursor="pointer">
       <Box
@@ -93,7 +95,7 @@ export default function Cards({image, title, desc}){
                       bg={"none"}
                       _hover={"none"}
                       _active={"none"}
-                      onClick={() => alert("Share")}
+                      onClick={() => navigate("/share")}
                     >
                       Share
                     </Button>

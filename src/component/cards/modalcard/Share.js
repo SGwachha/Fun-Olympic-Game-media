@@ -1,32 +1,9 @@
-import { Button,Drawer, DrawerOverlay, DrawerContent,DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter } from "@chakra-ui/react"
+import React from 'react'
 
-const ModalComponent = ({title,children, modalOpen , modalClose }) => {
+const Share = () => {
   return (
-    <Drawer
-    isOpen={modalOpen}
-    placement='right'
-    onClose={modalClose}
-    size='xl'
-  >
-    <DrawerOverlay/>
-    <DrawerContent>
-      <DrawerCloseButton/>
-      <DrawerHeader>
-        {title}
-      </DrawerHeader>
-
-      <DrawerBody>
-        {children}
-      </DrawerBody>
-
-      <DrawerFooter>
-        <Button variant='outline' mr={3} bg="black" color="white" onClick={modalClose}>
-          Back
-        </Button>
-      </DrawerFooter>
-    </DrawerContent>
-  </Drawer>
+    <div>Share</div>
   )
 }
 
-export default ModalComponent
+export default Share
