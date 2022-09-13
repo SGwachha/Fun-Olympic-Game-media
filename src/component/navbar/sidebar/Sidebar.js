@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   CloseButton,
@@ -10,7 +10,9 @@ import {
   DrawerContent,
   Text,
   useDisclosure,
-} from '@chakra-ui/react';
+  IconButton,
+  VStack,
+} from "@chakra-ui/react";
 import {
   FiHome,
   FiTrendingUp,
@@ -18,15 +20,16 @@ import {
   FiStar,
   FiSettings,
   FiMenu,
-} from 'react-icons/fi';
+} from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
-const LinkItems = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Live', icon: FiSettings },
-];
+// const LinkItems = [
+//   { name: 'Home', icon: FiHome },
+//   { name: 'Trending', icon: FiTrendingUp },
+//   { name: 'Explore', icon: FiCompass },
+//   { name: 'Favourites', icon: FiStar },
+//   { name: 'Live', icon: FiSettings },
+// ];
 
 export default function Sidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,7 +37,7 @@ export default function Sidebar({ children }) {
     <Box h="100%" w="25%">
       <SidebarContent
         onClose={() => onClose}
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: "none", md: "block" }}
       />
       <Drawer
         autoFocus={false}
@@ -43,7 +46,8 @@ export default function Sidebar({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -56,33 +60,80 @@ export default function Sidebar({ children }) {
 }
 
 const SidebarContent = ({ onClose, ...rest }) => {
+  const navigate = useNavigate();
   return (
     <Box
-      bg={useColorModeValue('white', 'gray.900')}
+      bg={useColorModeValue("white", "gray.900")}
       borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
+      borderRightColor={useColorModeValue("gray.200", "gray.700")}
+      w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
-      {...rest}>
+      {...rest}
+    >
       <Flex h="20" alignItems="center" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Fun Olympic Games
         </Text>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))}
+      <VStack ml="-50%">
+        <Flex justify={"flex-start"} align={"center"} gap={5}>
+          <IconButton
+            icon={<FiHome />}
+            onClick={() => navigate("/dashboard")}
+            bg="none"
+            _hover="none"
+            _active="none"
+            cursor={"pointer"}
+          />
+          <Text fontWeight={700}>Home</Text>
+        </Flex>
+        <Flex justify={"flex-start"} align={"center"} gap={5}>
+          <IconButton
+            icon={<FiTrendingUp />}
+            onClick={() => navigate("/dashboard")}
+            bg="none"
+            _hover="none"
+            _active="none"
+            cursor={"pointer"}
+          />
+          <Text fontWeight={700}>Trending</Text>
+        </Flex>
+        <Flex justify={"flex-start"} align={"center"} gap={5}>
+          <IconButton
+            icon={<FiStar />}
+            onClick={() => navigate("/dashboard")}
+            bg="none"
+            _hover="none"
+            _active="none"
+            cursor={"pointer"}
+          />
+          <Text fontWeight={700}>Favourites</Text>
+        </Flex>
+        <Flex justify={"flex-start"} align={"center"} gap={5}>
+          <IconButton
+            icon={<FiSettings />}
+            onClick={() => navigate("/dashboard")}
+            bg="none"
+            _hover="none"
+            _active="none"
+            cursor={"pointer"}
+          />
+          <Text fontWeight={700}>Settings</Text>
+        </Flex>
+      </VStack>
     </Box>
   );
 };
 
 const NavItem = ({ icon, children, ...rest }) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link
+      href="#"
+      style={{ textDecoration: "none" }}
+      _focus={{ boxShadow: "none" }}
+    >
       <Flex
         align="center"
         p="4"
@@ -90,16 +141,17 @@ const NavItem = ({ icon, children, ...rest }) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: 'cyan.400',
-          color: 'white',
+          bg: "cyan.400",
+          color: "white",
         }}
-        {...rest}>
+        {...rest}
+      >
         {icon && (
           <Icon
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: 'white',
+              color: "white",
             }}
             as={icon}
           />
