@@ -11,25 +11,14 @@ import {
   Text,
   useDisclosure,
   IconButton,
-  VStack,
 } from "@chakra-ui/react";
 import {
   FiHome,
   FiTrendingUp,
-  FiCompass,
   FiStar,
   FiSettings,
-  FiMenu,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
-// const LinkItems = [
-//   { name: 'Home', icon: FiHome },
-//   { name: 'Trending', icon: FiTrendingUp },
-//   { name: 'Explore', icon: FiCompass },
-//   { name: 'Favourites', icon: FiStar },
-//   { name: 'Live', icon: FiSettings },
-// ];
 
 export default function Sidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -77,52 +66,70 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      <VStack ml="-50%">
-        <Flex justify={"flex-start"} align={"center"} gap={5}>
+      <Flex direction={"column"} gap={5} cursor="pointer">
+        <Flex
+          justify={"flex-start"}
+          align={"center"}
+          gap={5}
+          onClick={() => navigate("/dashboard")}
+        >
           <IconButton
             icon={<FiHome />}
-            onClick={() => navigate("/dashboard")}
             bg="none"
             _hover="none"
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700}>Home</Text>
+          <Text fontWeight={700} fontSize="24px">
+            Home
+          </Text>
         </Flex>
-        <Flex justify={"flex-start"} align={"center"} gap={5}>
+        <Flex
+          justify={"flex-start"}
+          align={"center"}
+          gap={5}
+          onClick={() => navigate("/trending")}
+        >
           <IconButton
             icon={<FiTrendingUp />}
-            onClick={() => navigate("/dashboard")}
             bg="none"
             _hover="none"
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700}>Trending</Text>
+          <Text fontWeight={700} fontSize="24px">
+            Trending
+          </Text>
         </Flex>
-        <Flex justify={"flex-start"} align={"center"} gap={5}>
+        <Flex justify={"flex-start"} align={"center"} gap={5}
+            onClick={() => navigate("/favourites")}
+            >
           <IconButton
             icon={<FiStar />}
-            onClick={() => navigate("/dashboard")}
             bg="none"
             _hover="none"
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700}>Favourites</Text>
+          <Text fontWeight={700} fontSize="24px">
+            Favourites
+          </Text>
         </Flex>
-        <Flex justify={"flex-start"} align={"center"} gap={5}>
+        <Flex justify={"flex-start"} align={"center"} gap={5}
+            onClick={() => navigate("/settings")}
+            >
           <IconButton
             icon={<FiSettings />}
-            onClick={() => navigate("/dashboard")}
             bg="none"
             _hover="none"
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700}>Settings</Text>
+          <Text fontWeight={700} fontSize="24px">
+            Settings
+          </Text>
         </Flex>
-      </VStack>
+      </Flex>
     </Box>
   );
 };
