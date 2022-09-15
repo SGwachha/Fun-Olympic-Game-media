@@ -55,7 +55,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       bg={useColorModeValue("white", "gray.900")}
       borderRight="1px"
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
-      w={{ base: "full", md: 60 }}
+      w={{ base: "full", md: 60}}
       pos="fixed"
       h="full"
       {...rest}
@@ -80,7 +80,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700} fontSize="24px">
+          <Text fontWeight={700} fontSize="20px">
             Home
           </Text>
         </Flex>
@@ -97,7 +97,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700} fontSize="24px">
+          <Text fontWeight={700} fontSize="20px">
             Trending
           </Text>
         </Flex>
@@ -111,7 +111,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700} fontSize="24px">
+          <Text fontWeight={700} fontSize="20px">
             Favourites
           </Text>
         </Flex>
@@ -125,7 +125,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
             _active="none"
             cursor={"pointer"}
           />
-          <Text fontWeight={700} fontSize="24px">
+          <Text fontWeight={700} fontSize="20px">
             Settings
           </Text>
         </Flex>
