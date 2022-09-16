@@ -36,7 +36,7 @@ const Router = () => {
         <Route path='/user' element={<User />} />
         <Route path='/trending' element={<Trending />} />
         <Route path='/favourites' element={<Favourites />} />
-        <Route path='/setting' element={<Setting />} />
+        <Route path='/settings' element={<Setting />} />
         <Route path='*' element={<h1 style={{fontSize : '40px'}}>404 Not Found</h1>} />
     </Routes>
     </>

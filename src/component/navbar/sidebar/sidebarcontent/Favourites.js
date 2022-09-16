@@ -1,11 +1,9 @@
-import { Flex } from "@chakra-ui/react";
-import React from "react";
+import React from 'react'
 
 const Favourites = () => {
   return (
-    <Flex>
-    </Flex>
-  );
-};
+    <div>Favourites</div>
+  )
+}
 
-export default Favourites;
+export default Favourites
