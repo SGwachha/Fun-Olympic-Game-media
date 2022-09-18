@@ -37,7 +37,6 @@ const Router = () => {
         <Route path='/trending' element={<Trending />} />
         <Route path='/favourites' element={<Favourites />} />
         <Route path='/settings' element={<Setting />} />
-        {/* remove this shit */}
         <Route path='*' element={<h1 style={{fontSize : '40px'}}>404 Not Found</h1>} />
     </Routes>
     </>

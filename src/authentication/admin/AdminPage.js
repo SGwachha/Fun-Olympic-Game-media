@@ -1,8 +1,45 @@
+import { Flex, Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import React from 'react'
 
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <Flex w="100%" padding={"2%"}>
+    <TableContainer w={"100%"}>
+  <Table>
+    <Thead>
+      <Tr>
+        <Th></Th>
+        <Th></Th>
+        <Th></Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>inches</Td>
+        <Td>millimetres (mm)</Td>
+        <Td isNumeric>25.4</Td>
+      </Tr>
+      <Tr>
+        <Td>feet</Td>
+        <Td>centimetres (cm)</Td>
+        <Td isNumeric>30.48</Td>
+      </Tr>
+      <Tr>
+        <Td>yards</Td>
+        <Td>metres (m)</Td>
+        <Td isNumeric>0.91444</Td>
+      </Tr>
+    </Tbody>
+    <Tfoot>
+      <Tr>
+        <Th>To convert</Th>
+        <Th>into</Th>
+        <Th isNumeric>multiply by</Th>
+      </Tr>
+    </Tfoot>
+  </Table>
+</TableContainer>
+    </Flex>
   )
 }
 
