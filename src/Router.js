@@ -16,6 +16,7 @@ import User from './authentication/user/User.js'
 import Trending from './component/navbar/sidebar/sidebarcontent/Trending.js'
 import Favourites from './component/navbar/sidebar/sidebarcontent/Favourites.js'
 import Setting from './component/navbar/sidebar/sidebarcontent/Setting.js'
+import UploadVides from './authentication/admin/UploadVides.js'
 
 const Router = () => {
   return (
@@ -36,6 +37,7 @@ const Router = () => {
         <Route path='/user' element={<User />} />
         <Route path='/trending' element={<Trending />} />
         <Route path='/favourites' element={<Favourites />} />
+        <Route path='/upload' element={<UploadVides />} />
         <Route path='/settings' element={<Setting />} />
         <Route path='*' element={<h1 style={{fontSize : '40px'}}>404 Not Found</h1>} />
     </Routes>

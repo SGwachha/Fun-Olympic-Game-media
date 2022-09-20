@@ -1,12 +1,15 @@
 import { Box, Flex, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import React from 'react'
+import AdminSidebar from './AdminSidebar'
 
 const AdminPage = () => {
   return (
     <Flex w="100%" padding={"2%"}>
-      <Box>
+      <Box w="20%" pl="2%">
+        <AdminSidebar />
       </Box>
-    <TableContainer w={"100%"}>
+    <Box w="80%">
+    <TableContainer>
   <Table>
     <Thead>
       <Tr>
@@ -38,6 +41,7 @@ const AdminPage = () => {
     </Tbody>
   </Table>
 </TableContainer>
+    </Box>
     </Flex>
   )
 }

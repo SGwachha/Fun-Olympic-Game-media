@@ -48,7 +48,7 @@ const User = () => {
               mb="15px"
               color="#363434"
             >
-              User Settings
+              Update Profile
             </Text>
             {/* first name section start  */}
             <FormLabel

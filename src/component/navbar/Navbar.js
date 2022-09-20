@@ -15,7 +15,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import FunOlympic from "../../images/funolympic.png"
+import Olympic from "../../images/olympic.png"
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
@@ -31,7 +31,7 @@ export default function Navbar() {
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box display="flex" justifyContent="center" gap={3}>
-            <Image cursor={"pointer"} onClick={() => navigate("/")} h="40px" borderRadius="10%" opacity="0.7" src={FunOlympic} alt="funolympic" />
+            <Image cursor={"pointer"} onClick={() => navigate("/")} h="100px" w="130px" src={Olympic} alt="olympic" />
           </Box>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={5} align="center" justify={"center"} >
