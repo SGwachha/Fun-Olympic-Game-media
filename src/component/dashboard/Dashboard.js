@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <>
       <SearchBar />
-      <Flex>
+      <Flex justify={"flex-start"} w="100%" pl={"5%"}>
         <Sidebar />
         <Flex>
           <CardsData />

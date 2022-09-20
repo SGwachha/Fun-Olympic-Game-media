@@ -17,10 +17,15 @@ import {
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import FunOlympic from "../../images/funolympic.png"
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+
 
 export default function Navbar() {
   const navigate = useNavigate();
   const { colorMode, toggleColorMode } = useColorMode();
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const is_loggedin = cookies["user-token"] ? false : true;
+
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -30,13 +35,12 @@ export default function Navbar() {
           </Box>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={5} align="center" justify={"center"} >
-              <Button onClick={() => navigate("/signup")} bg="none" _hover="none" _active="none" >Sign up</Button>
-              <span>/</span>
-              <Button onClick={() => navigate("/login")} bg="none" _hover="none" _active="none">Sign in</Button>
-              <Button onClick={toggleColorMode} _hover="none" _active={"none"}>
+              {is_loggedin ? (
+                <>
+                <Button onClick={toggleColorMode} _hover="none" _active={"none"}>
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </Button>
-              <Menu>
+                <Menu>
                 <MenuButton
                   as={Button}
                   rounded={"full"}
@@ -68,6 +72,18 @@ export default function Navbar() {
                   <MenuItem onClick={() => navigate("/")}>Logout</MenuItem>
                 </MenuList>
               </Menu>
+                </>
+              ) : 
+              (
+                <>
+                <Button onClick={() => navigate("/signup")} bg="none" _hover="none" _active="none" >Sign up</Button>
+              <span>/</span>
+              <Button onClick={() => navigate("/login")} bg="none" _hover="none" _active="none">Sign in</Button>
+              <Button onClick={toggleColorMode} _hover="none" _active={"none"}>
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+                </>
+              )}
             </Stack>
           </Flex>
         </Flex>

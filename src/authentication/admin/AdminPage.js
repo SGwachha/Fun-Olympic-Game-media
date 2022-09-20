@@ -1,42 +1,41 @@
-import { Flex, Table, TableContainer, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Flex, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import React from 'react'
 
 const AdminPage = () => {
   return (
     <Flex w="100%" padding={"2%"}>
+      <Box>
+      </Box>
     <TableContainer w={"100%"}>
   <Table>
     <Thead>
       <Tr>
-        <Th></Th>
-        <Th></Th>
-        <Th></Th>
+        <Th textAlign={"center"}>heading</Th>
+        <Th textAlign={"center"}>heading</Th>
+        <Th textAlign={"center"}>heading</Th>
+        <Th textAlign={"center"}>heading</Th>
       </Tr>
     </Thead>
     <Tbody>
       <Tr>
-        <Td>inches</Td>
-        <Td>millimetres (mm)</Td>
-        <Td isNumeric>25.4</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
       </Tr>
       <Tr>
-        <Td>feet</Td>
-        <Td>centimetres (cm)</Td>
-        <Td isNumeric>30.48</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
       </Tr>
       <Tr>
-        <Td>yards</Td>
-        <Td>metres (m)</Td>
-        <Td isNumeric>0.91444</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
+        <Td textAlign={"center"}>Text</Td>
       </Tr>
     </Tbody>
-    <Tfoot>
-      <Tr>
-        <Th>To convert</Th>
-        <Th>into</Th>
-        <Th isNumeric>multiply by</Th>
-      </Tr>
-    </Tfoot>
   </Table>
 </TableContainer>
     </Flex>
