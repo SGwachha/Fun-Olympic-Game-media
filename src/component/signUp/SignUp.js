@@ -67,15 +67,15 @@ const Signup = () => {
             </FormControl>
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" {...register("email")} />
+              <Input type="email" {...register( "email", {pattern: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/ })} />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
-              <Input type="password" {...register("password")} />
+              <Input type="password" {...register("password", {pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/})} />
             </FormControl>
             <FormControl id="cpassword" isRequired>
-              <FormLabel>Contact Number</FormLabel>
-              <Input type="password" {...register("cpassword")} />
+              <FormLabel>Confirm Number</FormLabel>
+              <Input type="password" {...register("cpassword", {pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/})} />
             </FormControl>
             <Stack spacing={6}>
               <Stack

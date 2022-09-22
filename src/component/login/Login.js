@@ -69,21 +69,21 @@ export default function Login() {
                 <FormControl id="email" isRequired>
                   <Input
                     type="email"
-                    {...register("email")}
+                    {...register("email", {pattern: /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/, required: true})}
                     placeholder="Enter Your Email"
                   />
                 </FormControl>
                 <FormControl id="password" isRequired>
                   <Input
                     type="password"
-                    {...register("password")}
+                    {...register("password", {pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, required: true})}
                     placeholder="Enter Your Password"
                   />
                 </FormControl>
                 <FormControl id="cpassword" isRequired>
                   <Input
                     type="password"
-                    {...register("cpassword")}
+                    {...register("cpassword", {pattern: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/, required: true})}
                     placeholder="Confirm Password"
                   />
                 </FormControl>
@@ -109,7 +109,7 @@ export default function Login() {
                     }}
                     type="submit"
                     isLoading={isSubmitting}
-                    onClick={() => navigate("/dashboard")}
+                    onClick= {() => navigate("/dashboard")}
                   >
                     Next
                   </Button>
