@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import {
   FiHome,
-  FiTrendingUp,
   FiStar,
   FiSettings,
 } from "react-icons/fi";
@@ -83,23 +82,6 @@ const SidebarContent = ({ onClose, ...rest }) => {
           />
           <Text fontWeight={700} fontSize="20px">
             Home
-          </Text>
-        </Flex>
-        <Flex
-          justify={"flex-start"}
-          align={"center"}
-          gap={5}
-          onClick={() => navigate("/trending")}
-        >
-          <IconButton
-            icon={<FiTrendingUp />}
-            bg="none"
-            _hover="none"
-            _active="none"
-            cursor={"pointer"}
-          />
-          <Text fontWeight={700} fontSize="20px">
-            Trending
           </Text>
         </Flex>
         <Flex justify={"flex-start"} align={"center"} gap={5}

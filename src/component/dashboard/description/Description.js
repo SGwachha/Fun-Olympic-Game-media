@@ -5,8 +5,6 @@ import {
   Stack,
   Text,
   Heading,
-  IconButton,
-  VStack,
 } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
@@ -15,6 +13,7 @@ import { MdOutlineReportProblem } from "react-icons/md";
 import { RiShareForwardLine } from "react-icons/ri";
 import SearchBar from "../../navbar/SearchBar";
 import { useNavigate } from "react-router-dom";
+import CardDetails from "./suggested/CardDetails";
 
 const Description = () => {
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ const Description = () => {
       >
         <Box w="80%" pos={"relative"}>
           <Box
-            h={"650px"}
+            h={"100vh"}
             w="100%"
             bg={"gray.100"}
             pos={"relative"}
@@ -109,8 +108,9 @@ const Description = () => {
             </Flex>
           </Flex>
         </Box>
-        <Box cursor={"pointer"} h={"750px"} w="30%" bg={"gray.100"}>
-          Suggested
+        <Box cursor={"pointer"} h={"100vh"} w="30%">
+          <Text>Suggested Video</Text>
+          <CardDetails />
         </Box>
       </Stack>
     </>
