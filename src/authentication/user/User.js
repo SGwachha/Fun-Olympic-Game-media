@@ -1,8 +1,23 @@
-import React, {useState, useRef} from 'react'
-import { Button, Flex, FormLabel, Input, InputGroup, InputRightElement, WrapItem, Image, Box, Spacer, Avatar,  Stack, Text } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef } from "react";
+import {
+  Button,
+  Flex,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputRightElement,
+  WrapItem,
+  Image,
+  Box,
+  Spacer,
+  Avatar,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import Sidebar from "../../component/navbar/sidebar/Sidebar";
 
 const User = () => {
   const [show, setShow] = useState(false);
@@ -25,21 +40,20 @@ const User = () => {
   };
 
   return (
-    <Flex
-    direction={"row"}
-    border="2px solid #F4F4F5"
-    borderRadius={"20px"}
-    w="50%"
-    my={5}
-    p={2}>
-      <form onsubmit = {handleSubmit()}>
-      <Stack
-            boxSize={"350px"}
-            height="100%"
-            w={"100%"}
-            spacing="3%"
-            p={5}
-          >
+    <Flex w="100%">
+      <Flex justify={"flex-start"} p={5}>
+        <Sidebar />
+      </Flex>
+      <Flex
+        direction={"row"}
+        border="2px solid #F4F4F5"
+        borderRadius={"20px"}
+        w="50%"
+        my={5}
+        p={2}
+      >
+        <form onsubmit={handleSubmit()}>
+          <Stack boxSize={"350px"} height="100%" w={"100%"} spacing="3%" p={5}>
             <Text
               fontSize={{ sm: "1.5vw", md: "2vw", lg: "1vw", xl: "1.25vw" }}
               fontWeight={"700"}
@@ -102,8 +116,8 @@ const User = () => {
             </InputGroup>
             {/*Last name section end */}
 
-             {/* Email Address section start */}
-             <FormLabel
+            {/* Email Address section start */}
+            <FormLabel
               fontSize={{ sm: "1vw", md: "1vw", lg: "1vw", xl: "0.93vw" }}
               fontWeight="600"
             >
@@ -126,8 +140,12 @@ const User = () => {
             </InputGroup>
             {/* Email Address section  end here */}
 
-             {/*password change request section start */}
-            <Button _hover={"none"} isActive={"none"} onClick={() => navigate("/forget")}>
+            {/*password change request section start */}
+            <Button
+              _hover={"none"}
+              isActive={"none"}
+              onClick={() => navigate("/forget")}
+            >
               <Text>Request Password Change</Text>
             </Button>
             {/*password change request section end */}
@@ -145,57 +163,58 @@ const User = () => {
               Save Changes
             </Button>
           </Stack>
-      </form>
-            <Spacer />
-      {/* box containing avatar image */}
-      <Box
-        p={1}
-        w={{ base: "30%", md: "15%", lg: "15%", xl: "25%" }}
-        alignItems="center"
-        justifyContent={"center"}
-      >
-        <WrapItem
-          justifyContent={"start"}
+        </form>
+        <Spacer />
+        {/* box containing avatar image */}
+        <Box
+          p={1}
+          w={{ base: "30%", md: "15%", lg: "15%", xl: "25%" }}
           alignItems="center"
-          mt={{ md: "70%", lg: "50%" }}
+          justifyContent={"center"}
         >
-          {profilePhoto === "" ? (
-            <Avatar boxSize={"80%"} src={"https://bit.ly/broken-link"} />
-          ) : (
-            <Image src={URL.createObjectURL(profilePhoto)} />
-          )}
-        </WrapItem>
+          <WrapItem
+            justifyContent={"start"}
+            alignItems="center"
+            mt={{ md: "70%", lg: "50%" }}
+          >
+            {profilePhoto === "" ? (
+              <Avatar boxSize={"80%"} src={"https://bit.ly/broken-link"} />
+            ) : (
+              <Image src={URL.createObjectURL(profilePhoto)} />
+            )}
+          </WrapItem>
 
-        {/* profile update section */}
-        <Input
-          ref={fileUpload}
-          display="none"
-          type={"file"}
-          onChange={fileInputHandler}
-        />
-        <Button
-          border={{
-            base: "none",
-            md: "2px solid #F4F4F5",
-            lg: "2px solid #F4F4F5",
-            xl: "2px solid #F4F4F5",
-          }}
-          borderRadius={"20px"}
-          mt="15px"
-          bg="white"
-          width={{ md: "10vw", lg: "7vw", xl: "8vw" }}
-          _hover={"none"}
-          isActive={"none"}
-          onClick={handleFile}
-          type="submit"
-          w={{ sm: "10vw", md: "9vw", lg: "10vw", xl: "9vw" }}
-          fontSize={{ sm: "0.25vw", md: "1vw", lg: "1vw", xl: "1vw" }}
-        >
-          Change Photo
-        </Button>
+          {/* profile update section */}
+          <Input
+            ref={fileUpload}
+            display="none"
+            type={"file"}
+            onChange={fileInputHandler}
+          />
+          <Button
+            border={{
+              base: "none",
+              md: "2px solid #F4F4F5",
+              lg: "2px solid #F4F4F5",
+              xl: "2px solid #F4F4F5",
+            }}
+            borderRadius={"20px"}
+            mt="15px"
+            bg="white"
+            width={{ md: "10vw", lg: "7vw", xl: "8vw" }}
+            _hover={"none"}
+            isActive={"none"}
+            onClick={handleFile}
+            type="submit"
+            w={{ sm: "10vw", md: "9vw", lg: "10vw", xl: "9vw" }}
+            fontSize={{ sm: "0.25vw", md: "1vw", lg: "1vw", xl: "1vw" }}
+          >
+            Change Photo
+          </Button>
         </Box>
+      </Flex>
     </Flex>
-  )
-}
+  );
+};
 
 export default User;

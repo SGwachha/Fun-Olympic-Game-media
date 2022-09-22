@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import {
   FiHome,
-  FiSettings,
 } from "react-icons/fi";
+import { FaArrowCircleLeft } from "react-icons/fa";	
 import { RiVideoUploadFill, RiLockPasswordFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 const AdminSidebar = ({ onClose, ...rest }) => {
@@ -88,7 +88,7 @@ const AdminSidebar = ({ onClose, ...rest }) => {
             onClick={() => navigate("/dashboard")}
             >
           <IconButton
-            icon={<FiSettings />}
+            icon={<FaArrowCircleLeft />}
             bg="none"
             _hover="none"
             _active="none"

@@ -8,7 +8,7 @@ const Favourites = () => {
   return (
     <>
     <SearchBar />
-      <Flex justify={"flex-start"} w="100%" pl={"5%"}>
+      <Flex justify={"flex-start"} w="100%" pl={"2%"}>
         <Sidebar />
         <Flex>
         </Flex>

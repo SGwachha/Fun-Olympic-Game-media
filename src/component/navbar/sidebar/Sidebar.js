@@ -18,6 +18,7 @@ import {
   FiStar,
   FiSettings,
 } from "react-icons/fi";
+import { BsNewspaper } from "react-icons/bs";	
 import { useNavigate } from "react-router-dom";
 
 export default function Sidebar({ children }) {
@@ -55,7 +56,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       bg={useColorModeValue("white", "gray.900")}
       borderRight="1px"
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
-      w={{ base: "full", md: 60}}
+      w={{ base: "full", md: "100%"}}
       pos="fixed"
       h="500px"
       {...rest}
@@ -116,7 +117,21 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Text>
         </Flex>
         <Flex justify={"flex-start"} align={"center"} gap={5}
-            onClick={() => navigate("/settings")}
+            onClick={() => navigate("/news")}
+            >
+          <IconButton
+            icon={<BsNewspaper />}
+            bg="none"
+            _hover="none"
+            _active="none"
+            cursor={"pointer"}
+          />
+          <Text fontWeight={700} fontSize="20px">
+            News
+          </Text>
+        </Flex>
+        <Flex justify={"flex-start"} align={"center"} gap={5}
+            onClick={() => navigate("/user")}
             >
           <IconButton
             icon={<FiSettings />}

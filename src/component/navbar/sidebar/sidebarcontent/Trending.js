@@ -1,14 +1,13 @@
 import React from 'react'
 import Sidebar from '../Sidebar'
 import SearchBar from '../../SearchBar'
-import CardsData from "../../../cards/CardsData";
 import { Flex } from '@chakra-ui/react';
 
 const Trending = () => {
   return (
     <>
     <SearchBar />
-      <Flex justify={"flex-start"} w="100%" pl={"5%"}>
+      <Flex justify={"flex-start"} w="100%" pl={"2%"}>
         <Sidebar />
         <Flex>
         </Flex>
