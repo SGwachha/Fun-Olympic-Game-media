@@ -16,6 +16,7 @@ import User from './authentication/user/User.js'
 import Favourites from './component/navbar/sidebar/sidebarcontent/Favourites.js'
 import Setting from './component/navbar/sidebar/sidebarcontent/Setting.js'
 import UploadVides from './authentication/admin/UploadVides.js'
+import Report from './component/cards/modalcard/Report.js'	
 
 const Router = () => {
   return (
@@ -37,6 +38,7 @@ const Router = () => {
         <Route path='/favourites' element={<Favourites />} />
         <Route path='/upload' element={<UploadVides />} />
         <Route path='/settings' element={<Setting />} />
+        <Route path= '/report' element={<Report />} />
         <Route path='*' element={<h1 style={{fontSize : '40px'}}>404 Not Found</h1>} />
     </Routes>
     </>

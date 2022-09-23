@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Center,
@@ -19,8 +20,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { RiShareForwardLine } from "react-icons/ri";
 import { MdOutlineReportProblem } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useDisclosure } from "@chakra-ui/react";
+import Report from "./modalcard/Report";
+import Share from "./modalcard/Share";
 
 export default function Cards({ image, title, description }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [storeData, setStoreData] = useState();
   const navigate = useNavigate();
   return (
     <Center w="100%" py={6} cursor="pointer">
@@ -91,7 +97,13 @@ export default function Cards({ image, title, description }) {
                       _hover={"none"}
                       _active={"none"}
                     >
-                      Report
+                      {/* for modal component */}
+                      <Report
+                        modalOpen={isOpen}
+                        modalClose={onClose}
+                      >
+                        <Report datas={storeData} />
+                      </Report>
                     </Button>
                     <Button
                       w="194px"
@@ -103,9 +115,14 @@ export default function Cards({ image, title, description }) {
                       bg={"none"}
                       _hover={"none"}
                       _active={"none"}
-                      onClick={() => navigate("/share")}
                     >
-                      Share
+                      {/* for modal component */}
+                      <Share
+                        modalOpen={isOpen}
+                        modalClose={onClose}
+                      >
+                        <Share datas={storeData} />
+                      </Share>
                     </Button>
                   </Stack>
                 </PopoverBody>

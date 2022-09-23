@@ -8,30 +8,33 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Input,
   Stack,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
-const Share = () => {
+const Report = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <Button onClick={onOpen} bg="none" _hover={"none"} _active={"none"}>
-        Share
+        Report
       </Button>
       <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Link for Sharing</ModalHeader>
+          <ModalHeader>Reson for Reportting</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <Input />
+            <Stack spacing={5} direction="row">
+              <Checkbox>Sexual Content</Checkbox>
+              <Checkbox>Body shaming</Checkbox>
+              <Checkbox>Copy Right</Checkbox>
+            </Stack>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
-              Share
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Report
             </Button>
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
@@ -40,4 +43,4 @@ const Share = () => {
     </>
   );
 };
-export default Share;
+export default Report;
