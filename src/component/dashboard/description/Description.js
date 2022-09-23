@@ -47,7 +47,7 @@ const Description = () => {
           <Flex mt="3%" justify={"space-between"} w="100%">
             <Box w="50%">
               <Heading fontSize={"24px"}>Football</Heading>
-              <Text>Messi vs Ronaldo</Text>
+              <Text>Messi vs Ronaldo Highlights</Text>
             </Box>
             <Flex display={"flex"} w="60%" justify="flex-end">
               <Button

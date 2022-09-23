@@ -13,6 +13,7 @@ import {
 import React from "react";
 import { useToast } from "@chakra-ui/react";
 import AdminSidebar from "./AdminSidebar";
+import data from "./AdminData";
 
 const AdminPage = () => {
   const toast = useToast();
@@ -33,23 +34,35 @@ const AdminPage = () => {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td textAlign={"center"}>Sanjeev</Td>
-                <Td textAlign={"center"}>sa@gmail.com</Td>
-                <Td textAlign={"center"}>Yes</Td>
-                <Td>
-                <Flex justify={"center"} align="center">
-                  <Button _hover={"none"} _active="none" onClick={() => toast({
-                    title: "User Banned",
-                    position: "top-right",
-                    description: "The User has been banned",
-                    status: "success",
-                    duration: 5000,
-                    isClosable: true,
-                  })}>Ban</Button>
-                </Flex>
-                </Td>
-              </Tr>
+              {data.map((data) => {
+                return (
+                  <Tr>
+                    <Td textAlign={"center"}>{data.username}</Td>
+                    <Td textAlign={"center"}>{data.email}</Td>
+                    <Td textAlign={"center"}>{data.active}</Td>
+                    <Td>
+                      <Flex justify={"center"} align="center">
+                        <Button
+                          _hover={"none"}
+                          _active="none"
+                          onClick={() =>
+                            toast({
+                              title: "User Banned",
+                              position: "top-right",
+                              description: "The User has been banned",
+                              status: "success",
+                              duration: 5000,
+                              isClosable: true,
+                            })
+                          }
+                        >
+                          Ban
+                        </Button>
+                      </Flex>
+                    </Td>
+                  </Tr>
+                );
+              })}
             </Tbody>
           </Table>
         </TableContainer>
