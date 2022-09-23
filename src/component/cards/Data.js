@@ -5,6 +5,8 @@ import Mancity from "../../images/mancity.jpeg";
 import Hockey from "../../images/hockey.jpg";
 import Running from "../../images/running.png";
 import WomenRunning from "../../images/womenrunning.jpg";
+import Badminton from "../../images/badminton.jpg";	
+import Volleyball from "../../images/volleyball.jpg";	
 
 const data = [
     {
@@ -12,7 +14,6 @@ const data = [
         title: "Football",
         description: "Messi vs Ronaldo Highlights",
       },
-      
       {
         image: Running,
         title: "Running",
@@ -44,14 +45,14 @@ const data = [
         description: "India vs Argentina",
       },
       {
-        image: Mancity,
-        title: "Football",
-        description: "Mancester City vs Mancester united Highlights",
+        image: Volleyball,
+        title: "Volleyball",
+        description: "U.S. Women's Volleyball Team Wins First Ever Olympic Gold Medal : Live Updates: The Tokyo Olympics : NPR",
       },
       {
-        image: Mancity,
-        title: "Football",
-        description: "Mancester City vs Mancester united Highlights",
+        image: Badminton,
+        title: "Badminton",
+        description: "Top 10 Badminton Rallies at the Olympic Games! | Top Moments",
       },
 ]
 export default data;

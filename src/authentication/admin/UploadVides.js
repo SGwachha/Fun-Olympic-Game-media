@@ -8,8 +8,8 @@ const UploadVides = () => {
 
   return (
     <>
-    <Flex w="100%" padding={"2%"} gap={10}>
-      <Box w="20%" pl="2%">
+    <Flex w="100%" padding={"2%"} gap={10} pb="5%">
+      <Box w="20%">
         <AdminSidebar />
       </Box>
     <Box w="80%">

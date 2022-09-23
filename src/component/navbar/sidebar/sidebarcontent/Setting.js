@@ -1,7 +1,6 @@
 import React from 'react'
 import Sidebar from '../Sidebar'
 import SearchBar from '../../SearchBar'
-import CardsData from "../../../cards/CardsData";
 import { Flex } from '@chakra-ui/react';
 
 const Setting = () => {
