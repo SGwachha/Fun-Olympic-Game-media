@@ -1,18 +1,23 @@
+import Featured from "../images/featured.jpg";
+import Watched from "../images/watched.png";
+import Liked from "../images/liked.jpg";
+import News from "../images/news.jpg";
+
 const Data = [
     {
-        image: "",
+        image: Featured,
         title: "Featured Videos"
     },
     {
-        image: "",
+        image: Watched,
         title: "Most Watched Videos"
     },
     {
-        image: "",
+        image: Liked,
         title: "Most Liked Videos"
     },
     {
-        image: "",
+        image: News,
         title: "Today's News"
     }
 ]

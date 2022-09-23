@@ -1,8 +1,8 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
-import CardsData from "../cards/CardsData";
 import SearchBar from "../navbar/SearchBar";
 import Sidebar from "../navbar/sidebar/Sidebar";
+import CardsData from "../cards/CardsData";
 
 const Dashboard = () => {
   return (
@@ -10,9 +10,9 @@ const Dashboard = () => {
       <SearchBar />
       <Flex justify={"flex-start"} w="100%" pl={"2%"}>
         <Sidebar />
-        <Flex>
+        <SimpleGrid w="100%" pb="5%">
           <CardsData />
-        </Flex>
+        </SimpleGrid>
       </Flex>
     </>
   );

@@ -10,16 +10,17 @@ import {
   IconButton,
   PopoverContent,
   Button,
+  Image,
   PopoverBody,
   PopoverArrow,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { RiShareForwardLine} from "react-icons/ri";
-import {MdOutlineReportProblem } from "react-icons/md";
+import { RiShareForwardLine } from "react-icons/ri";
+import { MdOutlineReportProblem } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-export default function Cards({image, title, desc}){
+export default function Cards({ image, title, description }) {
   const navigate = useNavigate();
   return (
     <Center w="100%" py={6} cursor="pointer">
@@ -40,7 +41,16 @@ export default function Cards({image, title, desc}){
           mx={-6}
           mb={6}
           pos={"relative"}
-        >Thumbnail</Box>
+        >
+          <Image
+            w="100%"
+            h="210px"
+            src={image}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          />
+        </Box>
         <Flex align={"center"} justify="center">
           <Stack w="100%">
             <Heading
@@ -51,9 +61,7 @@ export default function Cards({image, title, desc}){
             >
               {title}
             </Heading>
-            <Text color={"gray.500"}>
-              {desc}
-            </Text>
+            <Text color={"gray.500"}>{description}</Text>
           </Stack>
           <Flex justify={"flex-end"} mt={4}>
             <Popover placement="bottom">
